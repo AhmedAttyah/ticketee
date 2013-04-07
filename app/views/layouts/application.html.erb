@@ -19,7 +19,20 @@
 		<%= value %>
 	</div>
 <% end %>
-<h1><%= link_to "Ticketee", root_path %></h1>
+<h1>
+  <%= link_to "Ticketee", root_path %>
+</h1>
+<nav>
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email%>
+  <% else %>
+    <ul>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <li><%= link_to "Sign in", new_user_session_path %></li>
+    </ul>
+  <% end %>
+  
+</nav>
 <%= yield %>
 
 </body>

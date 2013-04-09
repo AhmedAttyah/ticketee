@@ -1,13 +1,14 @@
 class TicketsController < ApplicationController
 	before_filter :find_project
 	before_filter :find_ticket, only: [:update,:destroy,:edit,:show]
-	
+	before_filter :authenticate_user!, except:[:index,:show]
 	def new
 		@ticket = @project.tickets.build
 	end
 
 	def create
 		@ticket = @project.tickets.build(params[:ticket])
+		@ticket.user_id = current_user.id
 		if @ticket.save
 			redirect_to [@project,@ticket], notice: "Ticket has been created."
 		else

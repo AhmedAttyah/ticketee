@@ -5,11 +5,15 @@ Feature: Viewing Tickets
 
 	Background:
 		Given there is a project called "Linux"
-		And that project has a ticket:
+		And there are the following users:
+		| email | password |
+		| user@ticketee.com | password |
+		And I am signed in as them
+		And "user@ticketee.com" has created a ticket for this project:
 		|	title 	|	description|
 		|	Ubuntu	|	Grub error while dual booting|
 		And there is a project called "Windows"
-		And that project has a ticket:
+		And "user@ticketee.com" has created a ticket for this project:
 		|	title 	|	description|
 		|	Vista	|	disaster microsoft made! :D|
 		And I am on the homepage

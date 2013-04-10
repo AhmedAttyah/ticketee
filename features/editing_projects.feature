@@ -4,7 +4,11 @@ Feature: Editing Projects
 	I want to be able to do that through an interface
 
 	Background:
-		Given there is a project called "Linux"
+		Given there are the following users:
+		| email | password | admin|
+		| user@ticketee.com | password | true|
+		And I am signed in as them
+		And there is a project called "Linux"
 		And I am on the homepage
 		When I follow "Linux"
 		And I follow "Edit Project"

@@ -31,6 +31,9 @@
       <li><%= link_to "Sign in", new_user_session_path %></li>
     </ul>
   <% end %>
+  <%= admin_only do %>
+  <%=link_to "Admin", admin_root_path%>
+  <% end %>
   
 </nav>
 <%= yield %>

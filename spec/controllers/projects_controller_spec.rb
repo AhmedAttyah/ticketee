@@ -9,11 +9,7 @@ describe ProjectsController do
 		flash[:alert].should eql(message)
 	end
 
-	let (:user) do
-		user = FactoryGirl.build(:user)
-		user.confirm!
-		user
-	end
+	let (:user) { create_user!}
 	let (:project) do
 		project= FactoryGirl.build(:project)
 		project.save!

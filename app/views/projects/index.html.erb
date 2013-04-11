@@ -1,5 +1,5 @@
-<%= link_to new_project_path do	%>
-	Create New Project
+<%= admin_only do %>
+	<%= link_to "New Project",new_project_path	%>
 <% end %>
 
 <ul>

@@ -4,7 +4,7 @@ Feature: Deleting Projects
 	Scenario: Deleting Projecs
 		Given there are the following users:
 		| email | password | admin|
-		| user@ticketee.com | password | true|
+		| user@ticketee.com | password | true|	
 		And I am signed in as them
 		And there is a project called "Ahmed"
 		And I am on the homepage

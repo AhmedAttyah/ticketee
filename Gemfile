@@ -28,8 +28,8 @@ group :test, :development do
 	gem 'rspec-rails',   '~> 2.5'
 end
 group :test do 
-	gem "cucumber-rails", "1.3.0", :require => false
-	gem 'capybara'
+	gem 'cucumber-rails', '1.0.6'
+  gem 'capybara'
   gem 'nokogiri'
 	gem 'database_cleaner'
   gem 'factory_girl'
